@@ -36,7 +36,7 @@ function download_file() {
 }
 
 case $library_name in
-  "archaea" | "bacteria" | "viral" | "fungi" | "plant" | "human" | "protozoa")
+  "archaea" | "bacteria" | "viral" | "fungi" | "plant" | "human" | "protozoa" | "invertebrate")
     mkdir -p $LIBRARY_DIR/$library_name
     cd $LIBRARY_DIR/$library_name
     rm -f assembly_summary.txt
@@ -118,7 +118,7 @@ case $library_name in
     ;;
   *)
     1>&2 echo "Unsupported library.  Valid options are: "
-    1>&2 echo "  archaea bacteria viral fungi plant protozoa human plasmid"
+    1>&2 echo "  archaea bacteria viral fungi plant protozoa human plasmid invertebrate"
     1>&2 echo "  nr nt env_nr env_nt UniVec UniVec_Core"
     exit 1
     ;;
